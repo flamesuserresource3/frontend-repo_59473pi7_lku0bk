@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero from './components/Hero';
+import ProblemSection from './components/ProblemSection';
+import FeaturesSection from './components/FeaturesSection';
+import TestimonialsCTA from './components/TestimonialsCTA';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Divider() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
+    <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <div className="min-h-screen w-full bg-black text-white">
+      <Hero />
+      <Divider />
+      <ProblemSection />
+      <Divider />
+      <FeaturesSection />
+      <Divider />
+      <TestimonialsCTA />
+      <footer className="w-full bg-black px-6 py-10 text-center text-xs text-white/50">
+        © {new Date().getFullYear()} FLOCORE AI. All rights reserved.
+      </footer>
+    </div>
+  );
+}
